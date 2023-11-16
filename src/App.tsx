@@ -1,30 +1,24 @@
-import style from './App.module.scss'
-import Logo from './components/Logo'
-import Perfil from './assets/perfil.svg'
-import Sacola from './assets/sacola.svg'
+import Header from './components/Header'
+import Pesquisa from './components/Pesquisa'
+import UltimosLancamentos from './components/UltimosLancamentos'
+import styled from 'styled-components'
 
-function App() {
-  const textOpcoes = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE']
-  const icones = [Perfil, Sacola]
+const AppContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(90deg, #002F52 35%, #326589);
 
+  li {
+    list-style: none;
+  }
+`
+ 
+export default function App(){  
   return (
-    <div className={style.app}>
-      <header className={style.appHeader}>
-        <Logo />
-        <ul className={style.opcoes}>
-          {textOpcoes.map((item) => (
-            <li className={style.opcao}><p>{item}</p></li>
-          ))}
-        </ul>
-
-        <ul className={style.icones}>
-            {icones.map((icone) => (
-              <li className={style.icone}><img src={icone} /></li>
-            ))}
-        </ul>
-      </header>
-    </div>
+    <AppContainer>
+      <Header />
+      <Pesquisa />
+      <UltimosLancamentos />
+    </AppContainer>
   )
 }
-
-export default App

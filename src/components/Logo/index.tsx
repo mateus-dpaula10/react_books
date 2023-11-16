@@ -1,15 +1,23 @@
-import style from './Logo.module.scss'
+import styled from 'styled-components'
 import logoImg from '../../assets/logo.svg'
+
+const LogoContainer = styled.div`
+    display: flex;
+    font-size: 30px;
+`
+
+const LogoImg = styled.img`
+    margin-right: 10px;
+`
 
 export default function Logo() {
     return (
-        <div className={style.logo}>
-            <img 
+        <LogoContainer>
+            <LogoImg 
                 src={logoImg} 
-                alt="logo"
-                className={style.logoImg}
+                alt="logo" 
             />
             <p><strong>Alura</strong> Books</p>
-        </div>
+        </LogoContainer>
     )
 }
